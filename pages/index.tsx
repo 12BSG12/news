@@ -1,8 +1,8 @@
-import { Paper, Typography } from '@mui/material';
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import Image from 'next/image';
 import { Header } from '../components/Header';
+import { LeftMenu } from '../components/LeftMenu';
+import { Post } from '../components/Post';
 
 const Home: NextPage = () => {
   return (
@@ -17,21 +17,11 @@ const Home: NextPage = () => {
           rel="stylesheet"></link>
       </Head>
       <Header />
-      <div className="leftSide">left</div>
+      <div className="leftSide">
+        <LeftMenu />
+      </div>
       <div className="content">
-        <Paper elevation={0} sx={{ p: '20px' }}>
-          <Typography variant="h5">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt quaerat molestiae vel
-            sit, enim, in quisquam optio, perferendis eaque non dignissimos corrupti magnam. Rerum
-            nihil optio laborum commodi recusandae repellendus?
-          </Typography>
-          <Typography>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt quaerat molestiae vel
-            sit, enim, in quisquam optio, perferendis eaque non dignissimos corrupti magnam. Rerum
-            nihil optio laborum commodi recusandae repellendus?
-          </Typography>
-          <Image src='https://via.placeholder.com/540x600' alt='' layout='fill'/>
-        </Paper>
+        <Post />
       </div>
       <div className="rightSide">right</div>
     </div>

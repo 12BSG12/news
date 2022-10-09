@@ -1,0 +1,30 @@
+.menu {
+  position: fixed;
+  left: 15px;
+  width: 200px;
+  ul {
+    li {
+      svg{
+        margin-right: 10px;
+      }
+      button {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 10px;
+        width: 100%;
+        color: #000;
+        text-transform: inherit;
+        font-size: 16px;
+        font-weight: 400;
+      }
+      &:first-child{
+        svg:nth-child(2){
+          margin-right: 0;
+          position: absolute;
+          right: 0;
+        }
+      }
+    }
+  }
+}

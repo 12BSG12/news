@@ -10,6 +10,14 @@ a {
   text-decoration: none;
 }
 
+ul{
+  padding: 0;
+  margin: 0;
+}
+ul li {
+  list-style: none;
+}
+
 * {
   -webkit-text-size-adjust: 100%;
   box-sizing: border-box;
@@ -25,16 +33,6 @@ a {
   &--full {
     max-width: 1000px;
   }
-}
-
-.leftSide{
-  position: fixed;
-  left: 0;
-}
-
-.rightSide{
-  position: fixed;
-  right: 0;
 }
 
 .wrapper {
