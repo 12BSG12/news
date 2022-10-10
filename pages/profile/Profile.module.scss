@@ -1,0 +1,24 @@
+.avatar{
+  display: flex;
+  justify-content: space-between;
+}
+
+.newSubscribers{
+  display: flex;
+  margin: 10px 0;
+}
+
+.subscribersBody{
+  display: flex;
+  align-items: center;
+}
+
+.subscribersPost{
+  display: flex;
+  margin-right: 20px;
+}
+
+.subscribersAvatar{
+  display: flex;
+  margin-top: 15px;
+}

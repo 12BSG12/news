@@ -1,9 +1,11 @@
 .menu {
   position: fixed;
+  top: 70px;
   left: 15px;
   width: 200px;
   ul {
     li {
+      margin-bottom: 2px;
       svg{
         margin-right: 10px;
       }
@@ -22,7 +24,7 @@
         svg:nth-child(2){
           margin-right: 0;
           position: absolute;
-          right: 0;
+          right: 10px;
         }
       }
     }

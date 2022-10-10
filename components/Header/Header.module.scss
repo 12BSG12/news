@@ -1,9 +1,12 @@
 .root {
+  position: fixed;
+  width: 100%;
+  z-index: 1;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: #fff4e2 !important;
-  padding: 0 20px;
+  padding: 0 35px 0 10px;
   height: 60px;
   margin-bottom: 14px;
 }
@@ -26,7 +29,8 @@
 
 .searchBlock {
   position: relative;
-  margin-right: 10px;
+  margin-right: 15px;
+  width: 300px;
   svg {
     position: absolute;
     top: 8px;
@@ -34,7 +38,7 @@
     opacity: 0.3;
   }
   input {
-    width: 240px;
+    width: 100%;
     height: 38px;
     border: none;
     font-family: inherit;
@@ -55,11 +59,19 @@
 }
 
 .avatar{
-  margin-left: 15px;
+  margin: 0 6px 0 15px;
 }
 
 .penBtn{
+  display: flex;
+  align-items: center;
+  svg{
+    margin-left: 10px;
+  }
+  background-color: white !important;
+  color: black !important;
   min-width: 40px !important;
-  width: 40px;
-  height: 40px !important;
+  text-transform: inherit !important;
+  font-size: 16px !important;
+  letter-spacing: 0 !important;
 }

@@ -5,7 +5,7 @@ import styles from "./Post.module.scss";
 
 export const Post = () => {
   return (
-    <Paper elevation={0} sx={{ p: '20px', borderRadius: '8px'}}>
+    <Paper elevation={0} sx={{ p: '20px', borderRadius: '8px', marginBottom: '40px'}}>
       <Typography variant="h5" className={styles.title}>
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt quaerat molestiae vel sit,
         enim, in quisquam optio, perferendis eaque non dignissimos corrupti magnam. Rerum nihil

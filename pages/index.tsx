@@ -1,8 +1,8 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import { Header } from '../components/Header';
-import { LeftMenu } from '../components/LeftMenu';
-import { Post } from '../components/Post';
+import { Post } from '../components/Post';;
+import {MainLayout} from '../layouts/MainLayout'
 
 const Home: NextPage = () => {
   return (
@@ -17,13 +17,11 @@ const Home: NextPage = () => {
           rel="stylesheet"></link>
       </Head>
       <Header />
-      <div className="leftSide">
-        <LeftMenu />
-      </div>
-      <div className="content">
+      <MainLayout>
         <Post />
-      </div>
-      <div className="rightSide">right</div>
+        <Post />
+        <Post />
+      </MainLayout>
     </div>
   );
 };

@@ -6,7 +6,8 @@ import CreateIcon from '@mui/icons-material/CreateOutlined';
 import MessageIcon from '@mui/icons-material/TextsmsOutlined';
 import NotificationIcon from '@mui/icons-material/NotificationsNoneOutlined';
 import MenuIcon from '@mui/icons-material/Menu';
-
+import ExpandIcon from '@mui/icons-material/ExpandMoreOutlined';
+import Link from 'next/link';
 export const Header: FC = () => {
   const [value, setValue] = useState<string>('')
   return (
@@ -25,6 +26,7 @@ export const Header: FC = () => {
           <input value={value} onChange={(e) => setValue(e.target.value)} placeholder="Поиск" />
         </div>
         <Button className={styles.penBtn} variant="contained">
+          Новая запись
           <CreateIcon color='inherit'/>
         </Button>
       </div>
@@ -35,7 +37,10 @@ export const Header: FC = () => {
         <IconButton aria-label="notification">
           <NotificationIcon />
         </IconButton>
-        <Avatar className={styles.avatar} variant="rounded" src="" />
+        <a href='/profile/1'>
+          <Avatar className={styles.avatar} variant="rounded" src="" />
+        </a>
+        <ExpandIcon/>
       </div>
     </Paper>
   );
