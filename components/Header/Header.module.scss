@@ -22,8 +22,8 @@
 }
 
 .logo {
-  width: 32px;
-  height: 42px;
+  width: 42px;
+  height: 52px;
   margin: 0 25px 0 10px;
 }
 
@@ -57,7 +57,10 @@
     }
   }
 }
-
+.profLink{
+  display: flex;
+  align-items: center;
+}
 .avatar{
   margin: 0 6px 0 15px;
 }

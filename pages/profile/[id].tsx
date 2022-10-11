@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Paper, Avatar, Typography, Button, Tabs, Tab } from '@mui/material';
+import { Paper, Avatar, Typography, Button, Tabs, Tab, AvatarGroup } from '@mui/material';
 import {
   SettingsOutlined as SettingsIcon,
   TextsmsOutlined as MessageIcon,
@@ -12,7 +12,7 @@ import styles from './Profile.module.scss';
 export default function Profile() {
   return (
     <MainLayout contentFullWidth hideComments>
-      <Paper sx={{ p: '0 20px 0 20px', marginBottom: '30px' }} elevation={0}>
+      <Paper sx={{ p: '20px 20px 0 20px', marginBottom: '30px' }} elevation={0}>
         <div className={styles.avatar}>
           <div>
             <Avatar
@@ -26,9 +26,9 @@ export default function Profile() {
           <div>
             <Link href="/profile/settings">
               <Button
-                sx={{ height: '42px', minWidth: '45px', width: '45px', marginRight: '10px' }}
+                className={styles.settingBtn}
                 variant="contained">
-                <SettingsIcon />
+                <SettingsIcon color="inherit" />
               </Button>
             </Link>
             <Button sx={{ height: '42px' }} variant="contained" color="primary">
@@ -41,10 +41,9 @@ export default function Profile() {
           <Typography sx={{ fontWeight: 'bold', color: '#35AB66', marginBottom: '15px' }}>
             +208
           </Typography>
-          <Typography>2 подписчика</Typography>
+          <Typography sx={{ marginLeft: '10px' }}>2 подписчика</Typography>
         </div>
         <Typography>На проекте с 15 сен 2016</Typography>
-
         <Tabs sx={{ marginTop: '20px' }} value={0} indicatorColor="primary" textColor="primary">
           <Tab label="Статьи" />
           <Tab label="Комментарии" />
@@ -58,14 +57,12 @@ export default function Profile() {
         <Paper sx={{ width: '300px', p: '20px', marginBottom: '20px' }} elevation={0}>
           <b>Подписчики</b>
           <div className={styles.subscribersAvatar}>
-            <Avatar
-              sx={{ marginRight: '10px' }}
-              src="https://i.imgur.com/gf3TZMr.jpeg"
-            />
-            <Avatar
-              sx={{ marginRight: '10px' }}
-              src="https://i.imgur.com/gf3TZMr.jpeg"
-            />
+            <AvatarGroup total={5} >
+              <Avatar src="https://i.imgur.com/gf3TZMr.jpeg" />
+              <Avatar src="https://i.imgur.com/gf3TZMr.jpeg" />
+              <Avatar src="https://i.imgur.com/gf3TZMr.jpeg" />
+              <Avatar src="https://i.imgur.com/gf3TZMr.jpeg" />
+            </AvatarGroup>
           </div>
         </Paper>
       </div>
