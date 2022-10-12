@@ -1,3 +1,4 @@
+import React from 'react';
 import Link from 'next/link';
 import { Paper, Avatar, Typography, Button, Tabs, Tab, AvatarGroup } from '@mui/material';
 import {
@@ -10,6 +11,10 @@ import { MainLayout } from '../../layouts/MainLayout';
 import styles from './Profile.module.scss';
 
 export default function Profile() {
+  const [value, setValue] = React.useState('0');
+  const handleChange = (event: React.SyntheticEvent, newValue: string) => {
+    setValue(newValue);
+  };
   return (
     <MainLayout contentFullWidth hideComments>
       <Paper sx={{ p: '20px 20px 0 20px', marginBottom: '30px' }} elevation={0}>
@@ -25,9 +30,7 @@ export default function Profile() {
           </div>
           <div>
             <Link href="/profile/settings">
-              <Button
-                className={styles.settingBtn}
-                variant="contained">
+              <Button className={styles.settingBtn} variant="contained">
                 <SettingsIcon color="inherit" />
               </Button>
             </Link>
@@ -44,10 +47,15 @@ export default function Profile() {
           <Typography sx={{ marginLeft: '10px' }}>2 подписчика</Typography>
         </div>
         <Typography>На проекте с 15 сен 2016</Typography>
-        <Tabs sx={{ marginTop: '20px' }} value={0} indicatorColor="primary" textColor="primary">
-          <Tab label="Статьи" />
-          <Tab label="Комментарии" />
-          <Tab label="Закладки" />
+        <Tabs
+          sx={{ marginTop: '20px' }}
+          value={value}
+          onChange={handleChange}
+          indicatorColor="primary"
+          textColor="primary">
+          <Tab value="0" label="Статьи" />
+          <Tab value="1" label="Комментарии" />
+          <Tab value="2" label="Закладки" />
         </Tabs>
       </Paper>
       <div className={styles.subscribersBody}>
@@ -57,7 +65,7 @@ export default function Profile() {
         <Paper sx={{ width: '300px', p: '20px', marginBottom: '20px' }} elevation={0}>
           <b>Подписчики</b>
           <div className={styles.subscribersAvatar}>
-            <AvatarGroup total={5} >
+            <AvatarGroup total={5}>
               <Avatar src="https://i.imgur.com/gf3TZMr.jpeg" />
               <Avatar src="https://i.imgur.com/gf3TZMr.jpeg" />
               <Avatar src="https://i.imgur.com/gf3TZMr.jpeg" />

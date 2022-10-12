@@ -14,17 +14,21 @@ import { FollowButton } from '../components/FollowButton';
 import { MainLayout } from '../layouts/MainLayout';
 
 const Rating = () => {
+  const [value, setValue] = React.useState('0');
+  const handleChange = (event: React.SyntheticEvent, newValue: string) => {
+    setValue(newValue);
+  };
   return (
-    <MainLayout hideComments>
+    <MainLayout>
       <Paper sx={{ p: '20px 20px 0 20px', marginBottom: '20px' }} elevation={0}>
         <Typography variant="h5" sx={{ fontWeight: '700', fontSize: '30px', marginBottom: '6px' }}>
           Рейтинг сообществ и блогов
         </Typography>
-        <Typography>Рейтинг сообществ и блогов</Typography>
-        <Tabs sx={{ marginTop: '10px' }} value={0} indicatorColor="primary" textColor="primary">
-          <Tab label="Октябрь" />
-          <Tab label="За 3 месяца" />
-          <Tab label="За всё время" />
+        <Typography sx={{fontSize: '15px'}}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, dolorem aut dolorum dignissimos magnam maxime alias perferendis aperiam eos atque assumenda soluta similique ad dolor provident numquam a consequatur vel.</Typography>
+        <Tabs sx={{ marginTop: '10px' }} value={value} onChange={handleChange} indicatorColor="primary" textColor="primary">
+          <Tab value="0" label="Октябрь" />
+          <Tab value="1" label="За 3 месяца" />
+          <Tab value="2" label="За всё время" />
         </Tabs>
       </Paper>
       <Paper elevation={0}>
