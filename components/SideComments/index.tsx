@@ -3,6 +3,7 @@ import ArrowRightIcon from '@mui/icons-material/NavigateNextOutlined';
 import styles from './SideComments.module.scss';
 import { CommentItem } from './CommentItem';
 import clsx from 'clsx';
+import data from '../../data'
 
 export const SideComments = () => {
   const [visible, setVisible] = React.useState(true);
@@ -15,7 +16,7 @@ export const SideComments = () => {
       <h3 onClick={toggleVisible}>
         Комментарии <ArrowRightIcon />
       </h3>
-      {visible && [...Array(2)].map((item, index) => <CommentItem key={index} />)}
+      {visible && data.comments.popular.map((item) => <CommentItem key={item.id} text={item.text} user={item.user} post={item.post} />)}
     </div>
   );
 };

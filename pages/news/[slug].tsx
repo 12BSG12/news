@@ -6,8 +6,8 @@ import { MainLayout } from '../../layouts/MainLayout';
 const News = () => {
   return (
     <MainLayout contentFullWidth>
-      <FullPost/>
-      <PostComments/>
+      <FullPost />
+      <PostComments />
     </MainLayout>
   );
 };

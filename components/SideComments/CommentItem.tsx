@@ -1,23 +1,36 @@
 import Image from 'next/image';
-import Link from 'next/link'
-import React from 'react'
-import styles from './SideComments.module.scss'
+import Link from 'next/link';
+import React from 'react';
+import styles from './SideComments.module.scss';
 
-export const CommentItem = () => {
+interface CommentItemProps {
+  user: {
+    fullName: string;
+    id: number;
+    avatarUrl: string;
+  };
+  text: string;
+  post: {
+    title: string;
+    id: number;
+  };
+}
+
+export const CommentItem: React.FC<CommentItemProps> = ({ user, text, post }) => {
   return (
     <div className={styles.commentItem}>
       <div className={styles.userInfo}>
-        <Image src='https://i.imgur.com/gf3TZMr.jpeg' width={24} height={24} alt='User Avatar'/>
+        <Image src={user.avatarUrl} width={24} height={24} alt="User Avatar" />
         <Link href={'/profile/' + 1}>
           <a>
-            <b>Вася жОпа</b>
+            <b>{user.fullName}</b>
           </a>
         </Link>
       </div>
-      <p className={styles.text}>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam ea officiis dolore dicta, quo at ut asperiores delectus maxime laborum explicabo adipisci non dolorem excepturi tempore incidunt aliquam doloribus enim!</p>
+      <p className={styles.text}>{text}</p>
       <Link href={'/news/' + 1}>
         <a>
-          <span className={styles.postTitle}>Lorem ipsum, dolor sit amet</span>
+          <span className={styles.postTitle}>{post.title}</span>
         </a>
       </Link>
     </div>

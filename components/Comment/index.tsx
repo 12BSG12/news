@@ -6,8 +6,10 @@ import styles from './Comment.module.scss';
 import Image from 'next/image';
 
 interface CommentPostProps {
+  id?: number;
   user?: {
-    fullname: string;
+    id?: number;
+    fullName: string;
     avatarUrl: string;
   };
   text?: string;
@@ -29,7 +31,7 @@ export const Comment: React.FC<CommentPostProps> = ({ user, text, createdAt }) =
     <div className={styles.comment}>
       <div className={styles.userInfo}>
         <Image src={user?.avatarUrl??''} alt="Avatar" width='30px' height='30px'/>
-        <b>{user?.fullname}</b>
+        <b>{user?.fullName}</b>
         <span>{createdAt}</span>
       </div>
       <Typography className={styles.text}>{text}</Typography>
