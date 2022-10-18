@@ -7,10 +7,22 @@ import MessageIcon from '@mui/icons-material/TextsmsOutlined';
 import NotificationIcon from '@mui/icons-material/NotificationsNoneOutlined';
 import MenuIcon from '@mui/icons-material/Menu';
 import ExpandIcon from '@mui/icons-material/ExpandMoreOutlined';
+import UserIcon from '@mui/icons-material/AccountCircleOutlined';
 import Link from 'next/link';
+import { Auth } from '../Auth';
 
 export const Header: FC = () => {
   const [value, setValue] = useState<string>('');
+  const [auth, setAuth] = useState<boolean>(false);
+
+  const openAuthDialog = () => {
+    setAuth(true);
+  };
+
+  const closeAuthDialog = () => {
+    setAuth(false);
+  };
+
   return (
     <Paper classes={{ root: styles.root }} elevation={0}>
       <div className={styles.headerLeft}>
@@ -38,19 +50,29 @@ export const Header: FC = () => {
         </Link>
       </div>
       <div className={styles.headerRight}>
-        <IconButton aria-label="message">
-          <MessageIcon />
-        </IconButton>
-        <IconButton aria-label="notification">
-          <NotificationIcon />
-        </IconButton>
-        <Link href="/profile/1">
-          <a className={styles.profLink}>
-            <Avatar className={styles.avatar} variant="rounded" src="" />
-            <ExpandIcon />
-          </a>
-        </Link>
+        {false ? (
+          <>
+            <IconButton aria-label="message">
+              <MessageIcon />
+            </IconButton>
+            <IconButton aria-label="notification">
+              <NotificationIcon />
+            </IconButton>
+            <Link href="/profile/1">
+              <a className={styles.profLink}>
+                <Avatar className={styles.avatar} variant="rounded" src="" />
+                <ExpandIcon />
+              </a>
+            </Link>
+          </>
+        ) : (
+          <div className={styles.loginButton} onClick={openAuthDialog}>
+            <UserIcon />
+            Войти
+          </div>
+        )}
       </div>
+      <Auth onClose={closeAuthDialog} visible={auth} />
     </Paper>
   );
 };
