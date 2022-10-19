@@ -10,7 +10,7 @@ export const MainForm: React.FC<MainFormProps> = ({ onOpenLogin }) => {
   return (
     <>
       <div>
-        <Button sx={{ marginBottom: '15px' }} variant="contained" fullWidth onClick={onOpenLogin}>
+        <Button sx={{ marginBottom: '15px' }} variant="contained" fullWidth>
           <svg fill="none" viewBox="0 0 24 24" id="v_vkontakte">
             <path
               d="M2 11.583c0-4.517 0-6.776 1.403-8.18C4.807 2 7.066 2 11.583 2h.834c4.517 0 6.776 0 8.18 1.403C22 4.807 22 7.066 22 11.583v.834c0 4.517 0 6.776-1.404 8.18C19.194 22 16.934 22 12.416 22h-.833c-4.517 0-6.776 0-8.18-1.404C2 19.194 2 16.934 2 12.416v-.833z"
@@ -25,7 +25,7 @@ export const MainForm: React.FC<MainFormProps> = ({ onOpenLogin }) => {
           </svg>
           ВКонтакте
         </Button>
-        <Button sx={{ marginBottom: '15px' }} variant="contained" fullWidth onClick={onOpenLogin}>
+        <Button sx={{ marginBottom: '15px' }} variant="contained" fullWidth>
           <svg fill="none" viewBox="0 0 24 24" id="v_google">
             <path
               d="M6.433 14.086l-.696 2.599-2.545.054a9.955 9.955 0 01-1.191-4.74 9.95 9.95 0 011.118-4.598l2.266.415.992 2.252A5.944 5.944 0 006.056 12c0 .734.133 1.437.377 2.086z"
@@ -58,7 +58,7 @@ export const MainForm: React.FC<MainFormProps> = ({ onOpenLogin }) => {
         </Button>
       </div>
       <div className={styles.miniButtons}>
-        <Button sx={{ marginBottom: '15px' }} variant="contained" fullWidth onClick={onOpenLogin}>
+        <Button sx={{ marginBottom: '15px' }} variant="contained" fullWidth>
           <svg fill="none" viewBox="0 0 24 24" id="v_facebook">
             <path
               d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.992 3.656 9.129 8.438 9.879V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.262c-1.242 0-1.629.772-1.629 1.563V12h2.774l-.443 2.89h-2.33v6.989C18.343 21.129 22 16.992 22 12z"
@@ -70,7 +70,7 @@ export const MainForm: React.FC<MainFormProps> = ({ onOpenLogin }) => {
             />
           </svg>
         </Button>
-        <Button sx={{ marginBottom: '15px' }} variant="contained" fullWidth onClick={onOpenLogin}>
+        <Button sx={{ marginBottom: '15px' }} variant="contained" fullWidth >
           <svg fill="none" viewBox="0 0 24 24" id="v_twitter">
             <path
               d="M19.953 7.983c.012.174.012.347.012.523C19.965 13.844 15.837 20 8.29 20v-.003A11.75 11.75 0 012 18.186a8.322 8.322 0 006.073-1.674c-1.756-.033-3.296-1.16-3.834-2.806a4.152 4.152 0 001.853-.07C4.178 13.256 2.8 11.6 2.8 9.676v-.05c.57.312 1.21.486 1.863.505a4.007 4.007 0 01-1.27-5.394 11.708 11.708 0 008.456 4.22 4.002 4.002 0 011.187-3.86 4.153 4.153 0 015.806.176c.919-.178 1.8-.51 2.606-.98a4.067 4.067 0 01-1.804 2.233A8.26 8.26 0 0022 5.89a8.267 8.267 0 01-2.047 2.093z"
@@ -78,7 +78,7 @@ export const MainForm: React.FC<MainFormProps> = ({ onOpenLogin }) => {
             />
           </svg>
         </Button>
-        <Button sx={{ marginBottom: '15px' }} variant="contained" fullWidth onClick={onOpenLogin}>
+        <Button sx={{ marginBottom: '15px' }} variant="contained" fullWidth >
           <svg viewBox="0 0 24 24" id="v_apple">
             <path
               fillRule="evenodd"
