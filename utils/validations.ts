@@ -8,3 +8,5 @@ export const schemaLogin = yup.object({
 export const schemaReg = yup.object({
   fullName: yup.string().matches(/^([А-Я]{1}[а-яё]{1,23}\s*|[A-Z]{1}[a-z]{1,23}\s*)+$/, 'Некорректный ввод').required('Поле обязательно для заполнения'),
 }).concat(schemaLogin).required();
+
+export const schemaSettings = yup.object().concat(schemaReg).required();
