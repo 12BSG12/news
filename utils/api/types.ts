@@ -7,14 +7,12 @@ export interface IReg extends ILogin {
   fullName: string;
 }
 
-export interface IResponseLogin {
+
+export interface ResponseUsers {
   id: number;
+  fullName: string;
   email: string;
   token: string;
-}
-
-export interface IResponseReg extends IResponseLogin {
-  fullName: string;
-  createdAt: string;
-  updatedAt: string;
+  createAt: string;
+  updateAt: string;
 }

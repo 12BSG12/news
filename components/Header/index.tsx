@@ -10,8 +10,12 @@ import ExpandIcon from '@mui/icons-material/ExpandMoreOutlined';
 import UserIcon from '@mui/icons-material/AccountCircleOutlined';
 import Link from 'next/link';
 import { Auth } from '../Auth';
+import { useAppSelector } from '../../redux/hooks';
+import { selectUserData } from '../../redux/slices/user';
 
 export const Header: FC = () => {
+  const userData = useAppSelector(selectUserData)
+
   const [value, setValue] = useState<string>('');
   const [auth, setAuth] = useState<boolean>(false);
 
@@ -50,7 +54,7 @@ export const Header: FC = () => {
         </Link>
       </div>
       <div className={styles.headerRight}>
-        {false ? (
+        {userData ? (
           <>
             <IconButton aria-label="message">
               <MessageIcon />

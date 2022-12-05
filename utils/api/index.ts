@@ -1,4 +1,4 @@
-import { IReg, ILogin, IResponseReg, IResponseLogin } from './types';
+import { IReg, ILogin, ResponseUsers } from './types';
 import axios from 'axios';
 
 const instance = axios.create({
@@ -12,11 +12,11 @@ const instance = axios.create({
 
 export const UserApi = {
   async register(dto: IReg) {
-    const { data } = await instance.post<IResponseReg>(`auth/register`, dto);
+    const { data } = await instance.post<ResponseUsers>(`auth/register`, dto);
     return data
   },
   async login(dto: ILogin) {
-    const { data } = await instance.post<IResponseLogin>(`auth/login`, dto);
+    const { data } = await instance.post<ResponseUsers>(`auth/login`, dto);
     return data
   },
 };

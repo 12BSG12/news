@@ -8,6 +8,8 @@ import { UserApi } from '../../../utils/api';
 import { IReg } from '../../../utils/api/types';
 import { setCookie } from 'nookies';
 import { ErrorAlert } from './ErrorAlert';
+import { useAppDispatch } from '../../../redux/hooks';
+import { setUserData } from '../../../redux/slices/user';
 
 interface RegisterFormProps {
   onOpenLogin: () => void;
@@ -15,6 +17,8 @@ interface RegisterFormProps {
 }
 
 export const RegisterForm: React.FC<RegisterFormProps> = ({ onOpenLogin, onOpenRegister }) => {
+  const dispatch = useAppDispatch()
+
   const [errorMessage, setErrorMessage] = React.useState('');
   const [isError, setIsError] = React.useState(false);
 
@@ -27,6 +31,7 @@ export const RegisterForm: React.FC<RegisterFormProps> = ({ onOpenLogin, onOpenR
         maxAge: 30 * 24 * 60 * 60,
         path: '/',
       })
+      dispatch(setUserData(response))
     } catch (error: any) {
       setErrorMessage(error.response.data.message);
       setIsError(true)
